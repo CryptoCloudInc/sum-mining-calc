@@ -12,7 +12,7 @@ app.controller('mainController', function($scope, $http){
     $scope.machineWattage = 1200;
     $scope.powerCost = 0.12;
 
-    $scope.bitcoin = {
+    $scope.sumcoin = {
         time: Date.now(),
         exchangerates: {
             usd: 0,
@@ -37,9 +37,9 @@ app.controller('mainController', function($scope, $http){
 
         let fgc = response.data;
 
-        $scope.bitcoin.exchangerates.usd = parseFloat(cdr.USD.code.n.replace(',',''));
-        $scope.bitcoin.exchangerates.gbp = parseFloat(cdr.bpi.GBP.rate.replace(',',''));
-        $scope.bitcoin.exchangerates.eur = parseFloat(cdr.bpi.EUR.rate.replace(',',''));
+        $scope.sumcoin.exchangerates.usd = parseFloat(cdr.USD.code.n.replace(',',''));
+        $scope.sumcoin.exchangerates.gbp = parseFloat(cdr.bpi.GBP.rate.replace(',',''));
+        $scope.sumcoin.exchangerates.eur = parseFloat(cdr.bpi.EUR.rate.replace(',',''));
 
     });
 
@@ -47,30 +47,30 @@ app.controller('mainController', function($scope, $http){
         $scope.difficulty = parseFloat(response.data);
     });
 
-    $scope.getBTCPerDay_Exact = function () {
+    $scope.getSUMPerDay_Exact = function () {
         return 86400 / ($scope.difficulty * (Math.pow(2,48)/65535) / ($scope.hashingPower * $scope.hashingUnitOptions.selectedHashingUnit.value)) * $scope.reward;
     };
 
-    $scope.getBTCPerDay = function () {
-        let temp = $scope.getBTCPerDay_Exact();
+    $scope.getSUMPerDay = function () {
+        let temp = $scope.getSUMPerDay_Exact();
         return temp.toPrecision(2);
     };
 
     $scope.getUSDPerDay = function () {
-        let temp = $scope.getBTCPerDay_Exact();
-        temp *= $scope.bitcoin.exchangerates.usd;
+        let temp = $scope.getSUMPerDay_Exact();
+        temp *= $scope.sumcoin.exchangerates.usd;
         return temp.toFixed(2);
     };
 
     $scope.getGBPPerDay = function () {
-        let temp = $scope.getBTCPerDay_Exact();
-        temp *= $scope.bitcoin.exchangerates.gbp;
+        let temp = $scope.getSUMPerDay_Exact();
+        temp *= $scope.sumcoin.exchangerates.gbp;
         return temp.toFixed(2);
     };
 
     $scope.getEURPerDay = function () {
-        let temp = $scope.getBTCPerDay_Exact();
-        temp *= $scope.bitcoin.exchangerates.eur;
+        let temp = $scope.getSUMPerDay_Exact();
+        temp *= $scope.sumcoin.exchangerates.eur;
         return temp.toFixed(2);
     };
 

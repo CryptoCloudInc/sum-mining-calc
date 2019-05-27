@@ -8,8 +8,8 @@ app.controller('mainController', function($scope, $http){
     $scope.reward = 100;
     $scope.difficulty = 0;
 
-    $scope.hashingPower = 13.5;
-    $scope.machineWattage = 1200;
+    $scope.hashingPower = 1;
+    $scope.machineWattage = 1600;
     $scope.powerCost = 0.12;
 
     $scope.sumcoin = {
@@ -30,7 +30,7 @@ app.controller('mainController', function($scope, $http){
             {value: 1000000000000, name: 'TH/s'},
 
         ],
-        selectedHashingUnit: {value: 1000000000000, name: 'TH/s'}
+        selectedHashingUnit: {value: 1000000000, name: 'GH/s'}
     };
 
     $http.get('https://rates.slicewallet.org/api/rates').then(function (response) {

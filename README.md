@@ -1,2 +1,3 @@
-# bitcoin-profit-calculator
-A simple bitcoin mining calculator
+# Sumcoin-profit-calculator
+
+A simple html/js Sumcoin mining calculator 

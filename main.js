@@ -37,15 +37,17 @@ app.controller('mainController', function($scope, $http){
 
         let fgc = response.data;
 
-        $scope.sumcoin.exchangerates.usd = parseFloat(cdr.USD.code.n.replace(',',''));
-        $scope.sumcoin.exchangerates.gbp = parseFloat(cdr.bpi.GBP.rate.replace(',',''));
-        $scope.sumcoin.exchangerates.eur = parseFloat(cdr.bpi.EUR.rate.replace(',',''));
+        $scope.sumcoin.exchangerates.usd = fgc[1].n;
+        $scope.sumcoin.exchangerates.gbp = parseFloat(fgc[6].n);
+        $scope.sumcoin.exchangerates.eur = parseFloat(fgc[0].n);
 
     });
 
-    $http.get('http://sumexplorer.com/api/getdifficulty').then(function (response) {
-        $scope.difficulty = parseFloat(response.data);
-    });
+    $http.get('http://sumcoinpool.org/index.php?page=api&action=getdifficulty&api_key=ebf72f14bac1652b5ffb1064e97bdf2344b6445c558351dd1f277eb033e7f85b').then(function (response) {
+        $scope.difficulty = parseFloat(response.data.getdifficulty.data);
+    }); 
+	
+	//$scope.difficulty = 237.0;
 
     $scope.getSUMPerDay_Exact = function () {
         return 86400 / ($scope.difficulty * (Math.pow(2,48)/65535) / ($scope.hashingPower * $scope.hashingUnitOptions.selectedHashingUnit.value)) * $scope.reward;

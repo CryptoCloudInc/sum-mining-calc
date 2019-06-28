@@ -43,8 +43,8 @@ app.controller('mainController', function($scope, $http){
 
     });
 
-    $http.get('http://sumcoinpool.org/index.php?page=api&action=getdifficulty&api_key=ebf72f14bac1652b5ffb1064e97bdf2344b6445c558351dd1f277eb033e7f85b').then(function (response) {
-        $scope.difficulty = parseFloat(response.data.getdifficulty.data);
+    $http.get('https://sumcoinindex.com/rates/price2.json').then(function (response) {
+        $scope.difficulty = parseFloat(response.data.difficulty);
     }); 
 	
 	//$scope.difficulty = 237.0;

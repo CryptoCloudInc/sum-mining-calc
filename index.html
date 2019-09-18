@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="keywords" content="SUM,sumcoin,mining,profit,calculator,coin,crypto,cryptocurrency,bitcoin,BTC,market,money,slice wallet">
+    <meta name="description" content="A simple Sumcoin Mining Calculator">
+    <meta property="og:title" content="Sumcoin | Mining Yield Calculator" />
+	<meta name="author" content="Sumcoin Mining Calculator" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--  <meta http-equiv="refresh" content="300"> -->
+    <body style="background-color:#fafdff;">
+        
+        
+<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101587237-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  gtag('config', 'UA-101587237-1');
+</script>
+
+<!-- END GA -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
@@ -19,16 +38,16 @@
     <div ng-app="app-calculator" ng-controller="mainController" ng-cloak>
 
         <div class="text-center" style="margin: 3em">
-            <img style="max-height: 100px; max-width: 100%;" id="logo" src="img/sum_logo.png">
+            <img style="max-height: 100px; max-width: 100px;" id="logo" src="img/sum_logo.png">
             <h2>Sumcoin Mining Profit Calculator</h2>
         </div>
-
+<center><h4>Default configs reflect average laptop</h4></center> 
 
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10 text-center">
                 <form id="main-form" style="padding: 2em;" class="form-horizontal">
-
+                    <p>Set your Hash power</p>
                     <div class="form-group">
                         <label class="control-label col-sm-2">Hashing Power:</label>
                         <div class="col-sm-10">
@@ -40,21 +59,23 @@
                             </div>
                         </div>
                     </div>
-
+                    
+                    <p>Approxamate Power Draw</p>
                     <div class="form-group">
                         <label class="control-label col-sm-2" >Power Draw(w):</label>
                         <div class="col-sm-10">
-                            <input ng-model="machineWattage" type="number" class="form-control" placeholder="1200W">
+                            <input ng-model="machineWattage" type="number" class="form-control" placeholder="150W">
                         </div>
                     </div>
-
+                    
+                    <p>Cost per KilloWatt - <i>Look on your power bill</i></p>
                     <div class="form-group">
                         <label class="control-label col-sm-2" >Power Cost(kWh):</label>
                         <div class="col-sm-10">
                             <input ng-model="powerCost" type="number" class="form-control" placeholder="0.15 kWh">
                         </div>
                     </div>
-
+                    
                 </form>
             </div>
             <div class="col-sm-1"></div>
@@ -63,11 +84,11 @@
         <br />
         <br />
 
-
+<center>
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10">
-                <table id="main-table" style="margin-left: auto; margin-right: auto;width: 100%;" class="table table-bordered table-striped">
+                <table id="main-table" style="margin-center: auto; margin-right: auto;width: auto;" class="table table-bordered table-striped">
                 <tr>
                     <th>Profit</th>
                     <th>SUM</th>
@@ -117,17 +138,26 @@
             </div>
             <div class="col-sm-1"></div>
         </div>
-
+</center>
         <br />
         <br />
-
+<hr>
+<center>       
+        <h2>Start Mining Now at Sumcoinpool.org</h2>
+  <div class="btn-group btn-group-lg">
+  <div class="btn-group btn-group-lg"><a href='http://sumcoinpool.org/index.php?page=register'><button type="button1" class="btn btn-success">Click here to register</button></a>
+  
+  <br>
+  <br>
+</center> 
+<hr>
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-10 text-center">
-                <p style="max-width: 100%;">Data for exchange rates comes from
+                <p style="max-width: 100%;">Data changes constantly in mining
                     <a href="www.sumcoinindex.com" target="_blank">sumcoinindex.com</a> & network data from
                     <a href="www.sumexplorer.com" target="_blank">sumexplorer.com</a>. This information is also
-                    based off a 100 coin block reward <a href="https://en.bitcoin.it/wiki/Controlled_supply#Projected_Bitcoins_Short_Term" target="_blank">which is subject to change at any time</a>.</p>
+                    based off a 50 coin block reward <a href="https://en.bitcoin.it/wiki/Controlled_supply#Projected_Bitcoins_Short_Term" target="_blank">which is subject to change at any time</a>.</p>
             </div>
             <div class="col-sm-1"></div>
         </div>

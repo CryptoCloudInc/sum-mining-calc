@@ -5,11 +5,11 @@ let app = angular.module('app-calculator', []);
 app.controller('mainController', function($scope, $http){
 
 //<!-- Set block reward below -->
-    $scope.reward = 100;
+    $scope.reward = 50;
     $scope.difficulty = 0;
 
-    $scope.hashingPower = 1;
-    $scope.machineWattage = 1600;
+    $scope.hashingPower = 35;
+    $scope.machineWattage = 150;
     $scope.powerCost = 0.12;
 
     $scope.sumcoin = {
@@ -30,7 +30,7 @@ app.controller('mainController', function($scope, $http){
             {value: 1000000000000, name: 'TH/s'},
 
         ],
-        selectedHashingUnit: {value: 1000000000, name: 'GH/s'}
+        selectedHashingUnit: {value: 1000, name: 'KH/s'}
     };
 
     $http.get('https://rates.slicewallet.org/api/rates').then(function (response) {
